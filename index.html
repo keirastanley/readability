@@ -5,16 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Roboto&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Readability</h1>
-    <input id="input"></input>
-    <button id="evaluate-button">Evaluate text</button>
-    <button id="start-button">Start Again</button>
-    <p id="text"></p>
-    <p id="results"></p>
-    <h2>About</h2>
-    <p><i>Readability</i> uses the Coleman-Liau index to gauge the understandability of a piece of text and suggests the U.S. grade level it is appropriate for. Simply enter the text you want to test into the input field and click the button to see the results. For more information about how the Coleman-Liau index works, <a href="https://en.wikipedia.org/wiki/Coleman–Liau_index" target="_blank">click here</a>. To avoid an inaccurate anaylsis please ensure all spelling and punctuation are correct. Please note, <i>Readability</i> tests only the ease with which an age group would be able to understand the text, not its appropriateness with regards to subject matter or adult content.</p> 
+    <div class="container">
+        <h1>Readability</h1>
+        <textarea></textarea>
+        <div id="buttons">
+            <button id="evaluate-button">Evaluate text</button>
+            <button id="start-button">Start Again</button>
+        </div>
+        <p id="text"></p>
+        <p id="results"></p>
+        <div id="about">
+            <h2>About</h2>
+            <p><i>Readability</i> uses the Coleman-Liau index to gauge the understandability of a piece of text and suggests the U.S. grade level it is appropriate for. Simply enter the text you want to test into the input field and click the button to see the results. For more information about how the Coleman-Liau index works, 
+                <a href="https://en.wikipedia.org/wiki/Coleman–Liau_index" target="_blank">click here</a>. To avoid an inaccurate anaylsis please ensure all spelling and punctuation are correct.
+            </p><p id="warning">Please note, <i>Readability</i> tests only the ease with which an age group would be able to understand the text, not its appropriateness with regards to subject matter or adult content.</p>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

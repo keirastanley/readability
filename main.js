@@ -3,7 +3,7 @@ console.log("linked");
 let letters, words, sentences, readability;
 
 //Prompt user for a piece of text
-let input = document.querySelector("#input");
+let input = document.querySelector("textarea");
 let evaluateButton = document.querySelector("#evaluate-button");
 let startButton = document.querySelector("#start-button");
 let textInput = document.querySelector("#text");
@@ -12,21 +12,26 @@ let text = "";
 
 //button.addEventListener("click", saveText);
 
-input.addEventListener("input", inputText);
+//input.addEventListener("input", inputText);
+evaluateButton.addEventListener("click", evaluateText);
 startButton.addEventListener("click", startAgain);
 
-function inputText(event){
+
+/*function inputText(event){
     text = event.target.value;
-    evaluateButton.addEventListener("click", evaluateText);
-}
+    
+}*/
 
 function startAgain(){
     text = "";
     input.value = "";
+    results.style.backgroundColor = "var(--tea-green)";
+    results.textContent = "";
 }
 
 function evaluateText(){
-    textInput.textContent = text;
+    console.log("evaluateText called");
+    text = input.value;
     //Count the number of letters
     letters = countLetters(text);
     //Count the number of words
@@ -39,19 +44,25 @@ function evaluateText(){
     //Print the reading grade for grades 1 to 16
     if (readability > 0 && readability < 17)
         {
-            results.textContent = `Grade ${Math.round(readability)}`;
+            results.style.backgroundColor = "var(--ivory)";
+            results.style.color = "var(--black)";
+            results.textContent = `This text is most appropriate for Grade ${Math.round(readability)}`;
         }
 
     //If reading grade is less than 1, print Before Grade 1
     if (readability < 1)
         {
-            console.log("Before Grade 1");
+            results.style.backgroundColor = "var(--ivory)";
+            results.style.color = "var(--black)";
+            results.textContent = "This text is most appropriate for before Grade 1";
         }
 
     //If reading grade is higher than 16, prlet Grade 16+
     if (readability > 16)
         {
-            console.log("Grade 16+");
+            results.style.backgroundColor = "var(--ivory)";
+            results.style.color = "var(--black)";
+            results.textContent = "This text is most appropriate for Grade 16 or above.";
         }
 }
 
